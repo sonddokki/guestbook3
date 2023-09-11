@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.javaex.dao.GuestDao;
 import com.javaex.vo.GuestVo;
 
-@WebServlet("/GBC")
+@WebServlet("/gbc")
 public class GuestbookController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -49,7 +49,7 @@ public class GuestbookController extends HttpServlet {
 			guestDao.guestInsert(guestVo);
 			
 			// 모두 처리됐으면 리스트로 돌아가기
-			response.sendRedirect("./GBC?action=list");
+			response.sendRedirect("./gbc?action=list");
 			
 		} else if ("dFrom".equals(action)) {
 			System.out.println("a=dFrom");
@@ -69,7 +69,7 @@ public class GuestbookController extends HttpServlet {
 			guestDao.guestDelete(no, password);
 			
 			// 모두 처리됐으면 리스트로 돌아가기
-			response.sendRedirect("./GBC?action=list");			
+			response.sendRedirect("./gbc?action=list");			
 			
 		} else {
 			System.out.println("나머지");
